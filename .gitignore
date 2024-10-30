@@ -1,0 +1,45 @@
+# Sistema
+*.DS_Store
+*.swp
+*.swo
+*.swn
+*.tmp
+
+# Python
+*.pyc
+*.pyo
+__pycache__/
+*.pyd
+*.pdb
+
+# Virtual environments
+env/
+venv/
+.venv/
+
+# Configuração IDEs
+.vscode/
+.idea/
+*.sublime*
+
+# Configuração do Django
+*.log
+*.pot
+*.py[cod]
+*.sqlite3
+db.sqlite3
+*.pkl
+
+# Arquivos de upload
+media/
+uploads/
+
+# Arquivo de configurações locais
+.env
+
+# Arquivos de migração
+**/migrations/
+
+# Arquivos de compilação
+staticfiles/
+node_modules/
