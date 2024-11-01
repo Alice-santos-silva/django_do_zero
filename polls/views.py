@@ -6,8 +6,9 @@ from django.http import HttpResponse
 def index(request):
     # return HttpResponse('olá django - index')
     # return render(request, 'index.html')
-    return render(request, 'index.html', {'titulo': 'últimas enquetes'})
+    return render(request, 'index.html', {'titulo': 'Gerenciamento de fornecedores'})
 
 # define outra view baseada em função
 def ola(request):
     return HttpResponse('olá django')
+
