@@ -1,0 +1,17 @@
+{% extends "_layout1.html" %}
+
+{% block head_title %}
+    nomes dos fornecedores 
+{% endblock %}
+
+{% block content %}
+
+    <h1>meus fornecedores</h1>
+    {% for fornecedor in all_questions %}
+        <article>
+            <p>{{ fornecedor.pub_date|date:"d/m/Y" }} | {{ fornecedor.question_text }}</p>
+        </article>
+    {% endfor %}
+
+{% endblock %}
+

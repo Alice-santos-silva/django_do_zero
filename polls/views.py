@@ -2,6 +2,8 @@ from django.shortcuts import render
 
 from django.http import HttpResponse
 
+from polls.models import Question
+
 # define uma view baseada em função
 def index(request):
     # return HttpResponse('olá django - index')
@@ -10,5 +12,7 @@ def index(request):
 
 # define outra view baseada em função
 def ola(request):
-    return HttpResponse('olá django')
-
+    # return HttpResponse('olá django')
+    questions = Question.objects.all()
+    context = {'all_questions': questions}
+    return render(request, 'polls/questions.html', context)
