@@ -1,0 +1,19 @@
+{% extends "_layout1.html" %}
+
+{% block content %}
+    <div class="card">
+        <div class="car-header">
+            <h5 class="car-title">
+                Registro de Usuário
+            </h5>
+        </div>
+
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %} {# proteção contra requisição falsa #}
+                {{form.as_p }} {# cada campo do form dentro de um paragrafo #}
+                <button type="submit" class="btn btn-success">Enviar</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

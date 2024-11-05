@@ -4,6 +4,8 @@ from django.http import HttpResponse
 
 from polls.models import Question
 
+from django.contrib.auth.decorators import login_required
+
 # define uma view baseada em função
 def index(request):
     # return HttpResponse('olá django - index')
@@ -11,6 +13,8 @@ def index(request):
     return render(request, 'index.html', {'titulo': 'Gerenciamento de fornecedores'})
 
 # define outra view baseada em função
+# usando o decorator de login:
+@login_required
 def ola(request):
     # return HttpResponse('olá django')
     questions = Question.objects.all()
