@@ -12,4 +12,29 @@ class AccountSignupForm(forms.ModelForm):
     
     class Meta(): # configurações extras para a classe 
         model = User
-        fields = ('username', 'email', 'password', ) # campos que quero expor 
+        fields = ('username', 'email', 'data_nascimento', 'cpf', 'password', ) # campos que quero expor 
+        widgets = {
+            'data_nascimento': forms.DateInput(
+                attrs={'type':'date', 'required': 'required'}
+            )
+        }
+        
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

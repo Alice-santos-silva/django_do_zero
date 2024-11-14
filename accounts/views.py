@@ -25,4 +25,3 @@ class AccountCreateView(CreateView):
         
         return super(AccountCreateView, self).form_valid(form)
     
-    

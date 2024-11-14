@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
 {% endblock %}
 
+
 {% block header %}
     <div class="container">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
@@ -24,7 +25,14 @@
                     <li class="nav-item">
                         <form action="{% url 'logout' %}" method="POST" style="display: inline;">
                             {% csrf_token %}
-                            <button type="submit" class="nav-link px-2 link-dark btn btn-link" style="padding: 0;">Sair</button>
+                            <ul>
+                                <li>{{ user.username }} |</li>
+                                <li><button type="submit" class="nav-link px-2 link-dark btn btn-link" style="padding: 0;">Sair</button></li>
+                                <li class="nav-item">
+                                    <a href="/admin/" class="nav-link px-2 link-dark">Admin</a>
+                                </li>
+                            </ul>
+                             
                         </form>
                     </li>
                 {% else %}
@@ -33,6 +41,9 @@
                     </li>
                     <li class="nav-item">
                         <a href="{% url 'login' %}" class="nav-link px-2 link-dark">Acessar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/" class="nav-link px-2 link-dark">Admin</a>
                     </li>
                 {% endif %}
             
@@ -46,6 +57,7 @@
 
 {% block main %} 
     <div class="container">
+        {% include 'registration/_messages.html' %}
         {% block content %}
             <p>conteudo padrão</p>
         {% endblock %}  
