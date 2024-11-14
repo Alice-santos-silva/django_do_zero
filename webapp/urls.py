@@ -16,6 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.utils.translation import gettext_lazy as _
+
+# Personalização do Django Admin
+admin.site.site_header = _("Gerenciamento Brazil Sensations")
+admin.site.site_title = _("Título da Aba do Admin")
+admin.site.index_title = _("Gerenciamento de fornecedores e clientes.")
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
